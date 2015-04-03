@@ -1,6 +1,6 @@
 {
   "name": "wallpaper",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Get or set the desktop wallpaper",
   "license": "MIT",
   "repository": "sindresorhus/wallpaper",
