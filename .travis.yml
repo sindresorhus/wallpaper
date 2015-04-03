@@ -1,0 +1,6 @@
+sudo: false
+language: objective-c
+install: brew install node
+script:
+  - npm install
+  - npm test

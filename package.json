@@ -1,0 +1,50 @@
+{
+  "name": "wallpaper",
+  "version": "0.0.0",
+  "description": "Get or set the desktop wallpaper",
+  "license": "MIT",
+  "repository": "sindresorhus/wallpaper",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "bin": {
+    "wallpaper": "cli.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
+    "win",
+    "windows",
+    "osx",
+    "linux",
+    "wallpaper",
+    "desktop",
+    "background",
+    "image",
+    "picture",
+    "photo",
+    "image"
+  ],
+  "dependencies": {
+    "linux-wallpaper": "^0.1.0",
+    "meow": "^3.0.0",
+    "osx-wallpaper": "^1.0.0",
+    "win-wallpaper": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
+}
