@@ -37,6 +37,7 @@
     "image"
   ],
   "dependencies": {
+    "linux-lockscreen": "^1.0.0",
     "linux-wallpaper": "^0.1.0",
     "meow": "^3.0.0",
     "osx-wallpaper": "^1.0.0",
