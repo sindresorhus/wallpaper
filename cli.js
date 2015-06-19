@@ -12,7 +12,7 @@ var cli = meow({
 		'  $ wallpaper unicorn.jpg',
 		'  $ wallpaper',
 		'  /Users/sindresorhus/unicorn.jpg'
-	].join('\n')
+	]
 }, {
 	string: ['_']
 });
