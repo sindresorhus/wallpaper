@@ -37,7 +37,7 @@
     "image"
   ],
   "dependencies": {
-    "linux-wallpaper": "^0.1.0",
+    "linux-wallpaper": "^1.0.0",
     "meow": "^3.3.0",
     "osx-wallpaper": "^1.0.0",
     "win-wallpaper": "^1.0.0"
