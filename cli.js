@@ -3,17 +3,15 @@
 var meow = require('meow');
 var wallpaper = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ wallpaper [file]',
-		'',
-		'Example',
-		'  $ wallpaper unicorn.jpg',
-		'  $ wallpaper',
-		'  /Users/sindresorhus/unicorn.jpg'
-	]
-}, {
+var cli = meow([
+	'Usage',
+	'  $ wallpaper [file]',
+	'',
+	'Example',
+	'  $ wallpaper unicorn.jpg',
+	'  $ wallpaper',
+	'  /Users/sindresorhus/unicorn.jpg'
+], {
 	string: ['_']
 });
 

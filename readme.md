@@ -39,13 +39,13 @@ $ npm install --save wallpaper
 ### Usage
 
 ```js
-var wallpaper = require('wallpaper');
+const wallpaper = require('wallpaper');
 
-wallpaper.set('unicorn.jpg', function (err) {
+wallpaper.set('unicorn.jpg', err => {
 	console.log('done');
 });
 
-wallpaper.get(function (err, imagePath) {
+wallpaper.get((err, imagePath) => {
 	console.log(imagePath);
 	//=> '/Users/sindresorhus/unicorn.jpg'
 });
@@ -57,7 +57,6 @@ wallpaper.get(function (err, imagePath) {
 
 ##### callback(error, imagePath)
 
-*Required*  
 Type: `function`
 
 ###### imagePath
@@ -70,7 +69,6 @@ Path to the current desktop wallpaper image.
 
 ###### imagePath
 
-*Required*  
 Type: `string`
 
 Path to the image to set as the desktop wallpaper.
