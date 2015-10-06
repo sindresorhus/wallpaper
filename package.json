@@ -39,8 +39,7 @@
   ],
   "dependencies": {
     "linux-wallpaper": "^1.0.0",
-    "meow": "^3.3.0",
-    "osx-wallpaper": "^1.0.0"
+    "meow": "^3.3.0"
   },
   "devDependencies": {
     "ava": "0.0.4"

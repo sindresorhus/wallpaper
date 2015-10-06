@@ -78,6 +78,8 @@ Path to the image to set as the desktop wallpaper.
 
 ## Info
 
+On OS X it uses the [`osx-wallpaper`](https://github.com/sindresorhus/osx-wallpaper) binary.
+
 On Windows it uses the [`win-wallpaper`](https://github.com/sindresorhus/win-wallpaper) binary.
 
 
