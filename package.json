@@ -18,7 +18,8 @@
   },
   "files": [
     "index.js",
-    "cli.js"
+    "cli.js",
+    "lib"
   ],
   "keywords": [
     "cli-app",
@@ -39,8 +40,7 @@
   "dependencies": {
     "linux-wallpaper": "^1.0.0",
     "meow": "^3.3.0",
-    "osx-wallpaper": "^1.0.0",
-    "win-wallpaper": "^1.0.0"
+    "osx-wallpaper": "^1.0.0"
   },
   "devDependencies": {
     "ava": "0.0.4"

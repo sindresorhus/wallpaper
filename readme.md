@@ -1,4 +1,4 @@
-# wallpaper [![Build Status](https://travis-ci.org/sindresorhus/wallpaper.svg?branch=master)](https://travis-ci.org/sindresorhus/wallpaper)
+# wallpaper [![Build Status](https://travis-ci.org/sindresorhus/wallpaper.svg?branch=master)](https://travis-ci.org/sindresorhus/wallpaper) [![Build status](https://ci.appveyor.com/api/projects/status/xhwaihmhhplh5d05/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/wallpaper/branch/master)
 
 > Get or set the desktop wallpaper
 
@@ -74,6 +74,11 @@ Path to the current desktop wallpaper image.
 Type: `string`
 
 Path to the image to set as the desktop wallpaper.
+
+
+## Info
+
+On Windows it uses the [`win-wallpaper`](https://github.com/sindresorhus/win-wallpaper) binary.
 
 
 ## License
