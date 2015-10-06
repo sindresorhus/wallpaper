@@ -14,7 +14,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "xo && node test.js"
   },
   "files": [
     "index.js",
@@ -42,6 +42,7 @@
     "meow": "^3.3.0"
   },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "0.0.4",
+    "xo": "*"
   }
 }
