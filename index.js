@@ -5,5 +5,5 @@ if (process.platform === 'darwin') {
 } else if (process.platform === 'win32') {
 	module.exports = require('./lib/win');
 } else {
-	module.exports = require('linux-wallpaper');
+	module.exports = require('./lib/linux');
 }
