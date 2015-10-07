@@ -9,7 +9,6 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "bin": "cli.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -18,13 +17,9 @@
   },
   "files": [
     "index.js",
-    "cli.js",
     "lib"
   ],
   "keywords": [
-    "cli-app",
-    "cli",
-    "bin",
     "win",
     "windows",
     "osx",
@@ -37,9 +32,6 @@
     "photo",
     "image"
   ],
-  "dependencies": {
-    "meow": "^3.4.1"
-  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"

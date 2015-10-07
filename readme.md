@@ -2,41 +2,17 @@
 
 > Get or set the desktop wallpaper
 
-Works on OS X, Linux and Windows.
+Works on OS X, Linux, and Windows.
 
 
-## CLI
-
-### Install
-
-```
-$ npm install --global wallpaper
-```
-
-### Usage
-
-```
-$ wallpaper --help
-
-  Usage
-    $ wallpaper [file]
-
-  Example
-    $ wallpaper unicorn.jpg
-    $ wallpaper
-    /Users/sindresorhus/unicorn.jpg
-```
-
-
-## Programmatic
-
-### Install
+## Install
 
 ```
 $ npm install --save wallpaper
 ```
 
-### Usage
+
+## Usage
 
 ```js
 const wallpaper = require('wallpaper');
@@ -51,34 +27,33 @@ wallpaper.get((err, imagePath) => {
 });
 ```
 
-### API
 
-#### .get(callback)
+## API
 
-##### callback(error, imagePath)
+### .get(callback)
+
+#### callback(error, imagePath)
 
 Type: `function`
 
-###### imagePath
+##### imagePath
 
 Type: `string`
 
 Path to the current desktop wallpaper image.
 
-#### .set(imagePath, [callback])
+### .set(imagePath, [callback])
 
-###### imagePath
+#### imagePath
 
 Type: `string`
 
 Path to the image to set as the desktop wallpaper.
 
 
-## Info
+## Related
 
-On OS X it uses the [`osx-wallpaper`](https://github.com/sindresorhus/osx-wallpaper) binary.
-
-On Windows it uses the [`win-wallpaper`](https://github.com/sindresorhus/win-wallpaper) binary.
+- [wallpaper-cli](https://github.com/sindresorhus/wallpaper-cli) - CLI for this module
 
 
 ## License
