@@ -1,25 +1,26 @@
-'use strict';
-var path = require('path');
-var test = require('ava');
-var wallpaper = require('./');
+import path from 'path';
+import test from 'ava';
+import wallpaper from './';
 
-test(function (t) {
+test(t => {
 	t.plan(4);
 
-	var orignalImagePath;
+	let orignalImagePath;
 
-	wallpaper.get(function (err, imagePath) {
+	wallpaper.get((err, imagePath) => {
+		t.ifError(err);
+
 		orignalImagePath = imagePath;
 
-		wallpaper.set('fixture.jpg', function (err) {
-			t.assert(!err, err);
+		wallpaper.set('fixture.jpg', err => {
+			t.ifError(err);
 
-			wallpaper.get(function (err, imagePath) {
-				t.assert(!err, err);
-				t.assert(imagePath === path.resolve('fixture.jpg'));
+			wallpaper.get((err, imagePath) => {
+				t.ifError(err);
+				t.is(imagePath, path.resolve('fixture.jpg'));
 
-				wallpaper.set(orignalImagePath, function (err) {
-					t.assert(!err, err);
+				wallpaper.set(orignalImagePath, err => {
+					t.ifError(err);
 				});
 			});
 		});
