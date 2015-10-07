@@ -17,11 +17,11 @@ $ npm install --save wallpaper
 ```js
 const wallpaper = require('wallpaper');
 
-wallpaper.set('unicorn.jpg', err => {
+wallpaper.set('unicorn.jpg').then(() => {
 	console.log('done');
 });
 
-wallpaper.get((err, imagePath) => {
+wallpaper.get().then(imagePath => {
 	console.log(imagePath);
 	//=> '/Users/sindresorhus/unicorn.jpg'
 });
@@ -30,19 +30,13 @@ wallpaper.get((err, imagePath) => {
 
 ## API
 
-### .get(callback)
+### .get()
 
-#### callback(error, imagePath)
+Returns a promise for the path of the current desktop wallpaper.
 
-Type: `function`
+### .set(imagePath)
 
-##### imagePath
-
-Type: `string`
-
-Path to the current desktop wallpaper image.
-
-### .set(imagePath, [callback])
+Returns a promise.
 
 #### imagePath
 
