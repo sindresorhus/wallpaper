@@ -33,7 +33,7 @@
     "image"
   ],
   "dependencies": {
-    "pify": "^2.2.0"
+    "pify": "^2.3.0"
   },
   "devDependencies": {
     "ava": "*",
