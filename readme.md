@@ -48,8 +48,10 @@ Path to the image to set as the desktop wallpaper.
 ## Related
 
 - [wallpaper-cli](https://github.com/sindresorhus/wallpaper-cli) - CLI for this module
+- [osx-wallpaper](https://github.com/sindresorhus/osx-wallpaper) - OS X binary used in this module
+- [win-wallpaper](https://github.com/sindresorhus/win-wallpaper) - Windows binary used in this module
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

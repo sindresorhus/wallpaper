@@ -1,8 +1,9 @@
 sudo: false
 language: objective-c
 install:
+  - brew update
   - brew install n
-  - n latest
+  - n lts
 script:
   - npm install
   - npm test
