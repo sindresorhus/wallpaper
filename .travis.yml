@@ -1,9 +1,5 @@
-sudo: false
-language: objective-c
-install:
-  - brew update
-  - brew install n
-  - n lts
-script:
-  - npm install
-  - npm test
+os: osx
+language: node_js
+node_js:
+  - '5'
+  - '4'
