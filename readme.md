@@ -2,7 +2,7 @@
 
 > Get or set the desktop wallpaper
 
-Works on OS X, Linux, and Windows.
+Works on macOS, Linux, and Windows.
 
 
 ## Install
@@ -48,7 +48,7 @@ Path to the image to set as the desktop wallpaper.
 ## Related
 
 - [wallpaper-cli](https://github.com/sindresorhus/wallpaper-cli) - CLI for this module
-- [osx-wallpaper](https://github.com/sindresorhus/osx-wallpaper) - OS X binary used in this module
+- [macos-wallpaper](https://github.com/sindresorhus/macos-wallpaper) - macOS binary used in this module
 - [win-wallpaper](https://github.com/sindresorhus/win-wallpaper) - Windows binary used in this module
 
 
