@@ -1,12 +1,12 @@
 import path from 'path';
 import test from 'ava';
-import fn from '.';
+import m from '.';
 
 test(async t => {
-	const orignalImagePath = await fn.get();
+	const orignalImagePath = await m.get();
 
-	await fn.set('fixture.jpg');
-	t.is(await fn.get(), path.resolve('fixture.jpg'));
+	await m.set('fixture.jpg');
+	t.is(await m.get(), path.resolve('fixture.jpg'));
 
-	await fn.set(orignalImagePath);
+	await m.set(orignalImagePath);
 });

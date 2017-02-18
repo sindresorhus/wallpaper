@@ -30,8 +30,7 @@
     "background",
     "image",
     "picture",
-    "photo",
-    "image"
+    "photo"
   ],
   "dependencies": {
     "pify": "^2.3.0"
