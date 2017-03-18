@@ -34,7 +34,7 @@ wallpaper.get().then(imagePath => {
 
 Returns a promise for the path of the current desktop wallpaper.
 
-### .set(imagePath)
+### .set(imagePath, [options])
 
 Returns a promise.
 
@@ -43,6 +43,18 @@ Returns a promise.
 Type: `string`
 
 Path to the image to set as the desktop wallpaper.
+
+#### options
+
+Type: `Object`
+
+##### scale
+
+Type: `string`<br>
+Values: `fill` `fit` `stretch` `center`<br>
+Default: Current system setting
+
+Scaling method. Only available on macOS.
 
 
 ## Related
