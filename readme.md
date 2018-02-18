@@ -8,7 +8,7 @@ Works on macOS, Linux, and Windows.
 ## Install
 
 ```
-$ npm install --save wallpaper
+$ npm install wallpaper
 ```
 
 

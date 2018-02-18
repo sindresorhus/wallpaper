@@ -2,7 +2,7 @@ import path from 'path';
 import test from 'ava';
 import m from '.';
 
-test(async t => {
+test('main', async t => {
 	const orignalImagePath = await m.get();
 
 	await m.set('fixture.jpg');

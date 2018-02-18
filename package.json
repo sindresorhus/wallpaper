@@ -1,45 +1,42 @@
 {
-  "name": "wallpaper",
-  "version": "2.6.0",
-  "description": "Get or set the desktop wallpaper",
-  "license": "MIT",
-  "repository": "sindresorhus/wallpaper",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js",
-    "lib"
-  ],
-  "keywords": [
-    "win",
-    "windows",
-    "macos",
-    "osx",
-    "linux",
-    "wallpaper",
-    "desktop",
-    "background",
-    "image",
-    "picture",
-    "photo"
-  ],
-  "dependencies": {
-    "pify": "^2.3.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "wallpaper",
+	"version": "2.6.0",
+	"description": "Get or set the desktop wallpaper",
+	"license": "MIT",
+	"repository": "sindresorhus/wallpaper",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"lib"
+	],
+	"keywords": [
+		"win",
+		"windows",
+		"macos",
+		"osx",
+		"linux",
+		"wallpaper",
+		"desktop",
+		"background",
+		"image",
+		"picture",
+		"photo"
+	],
+	"dependencies": {
+		"pify": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }
