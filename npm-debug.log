@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'test' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle wallpaper@3.0.0~pretest: wallpaper@3.0.0
+6 silly lifecycle wallpaper@3.0.0~pretest: no script for pretest, continuing
+7 info lifecycle wallpaper@3.0.0~test: wallpaper@3.0.0
+8 verbose lifecycle wallpaper@3.0.0~test: unsafe-perm in lifecycle true
+9 verbose lifecycle wallpaper@3.0.0~test: PATH: /usr/share/npm/bin/node-gyp-bin:/home/oboecat/work/wallpaper/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle wallpaper@3.0.0~test: CWD: /home/oboecat/work/wallpaper
+11 silly lifecycle wallpaper@3.0.0~test: Args: [ '-c', 'xo && ava' ]
+12 info lifecycle wallpaper@3.0.0~test: Failed to exec test script
+13 verbose stack Error: wallpaper@3.0.0 test: `xo && ava`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:17:16)
+13 verbose stack     at emitTwo (events.js:126:13)
+13 verbose stack     at ChildProcess.emit (events.js:214:7)
+13 verbose stack     at maybeClose (internal/child_process.js:925:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+14 verbose pkgid wallpaper@3.0.0
+15 verbose cwd /home/oboecat/work/wallpaper
+16 error Linux 4.15.0-23-generic
+17 error argv "/usr/bin/node" "/usr/bin/npm" "run" "test"
+18 error node v8.10.0
+19 error npm  v3.5.2
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error wallpaper@3.0.0 test: `xo && ava`
+24 error spawn ENOENT
+25 error Failed at the wallpaper@3.0.0 test script 'xo && ava'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the wallpaper package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     xo && ava
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs wallpaper
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls wallpaper
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]
