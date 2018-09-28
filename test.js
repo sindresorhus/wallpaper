@@ -1,12 +1,12 @@
 import path from 'path';
 import test from 'ava';
-import m from '.';
+import wallpaper from '.';
 
 test('main', async t => {
-	const orignalImagePath = await m.get();
+	const orignalImagePath = await wallpaper.get();
 
-	await m.set('fixture.jpg');
-	t.is(await m.get(), path.resolve('fixture.jpg'));
+	await wallpaper.set('fixture.jpg');
+	t.is(await wallpaper.get(), path.resolve('fixture.jpg'));
 
-	await m.set(orignalImagePath);
+	await wallpaper.set(orignalImagePath);
 });

@@ -1,7 +1,7 @@
 {
 	"name": "wallpaper",
 	"version": "3.0.0",
-	"description": "Get or set the desktop wallpaper",
+	"description": "Manage the desktop wallpaper",
 	"license": "MIT",
 	"repository": "sindresorhus/wallpaper",
 	"author": {
@@ -10,7 +10,7 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -30,11 +30,8 @@
 		"picture",
 		"photo"
 	],
-	"dependencies": {
-		"pify": "^3.0.0"
-	},
 	"devDependencies": {
-		"ava": "*",
-		"xo": "*"
+		"ava": "^0.25.0",
+		"xo": "^0.23.0"
 	}
 }

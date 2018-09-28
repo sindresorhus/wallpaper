@@ -17,14 +17,12 @@ $ npm install wallpaper
 ```js
 const wallpaper = require('wallpaper');
 
-wallpaper.set('unicorn.jpg').then(() => {
-	console.log('done');
-});
+(async () => {
+	await wallpaper.set('unicorn.jpg');
 
-wallpaper.get().then(imagePath => {
-	console.log(imagePath);
+	await wallpaper.get();
 	//=> '/Users/sindresorhus/unicorn.jpg'
-});
+})();
 ```
 
 
@@ -84,6 +82,7 @@ Scaling method.
 - [wallpaper-cli](https://github.com/sindresorhus/wallpaper-cli) - CLI for this module
 - [macos-wallpaper](https://github.com/sindresorhus/macos-wallpaper) - macOS binary used in this module
 - [win-wallpaper](https://github.com/sindresorhus/win-wallpaper) - Windows binary used in this module
+- [trash](https://github.com/sindresorhus/trash) - Move files and directories to the trash
 
 
 ## License
