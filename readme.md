@@ -30,9 +30,21 @@ wallpaper.get().then(imagePath => {
 
 ## API
 
-### .get()
+### .get([options])
 
 Returns a promise for the path of the current desktop wallpaper.
+
+#### options
+
+Type: `Object`
+
+##### screen *(macOS only)*
+
+Type: `string` `number`<br>
+Values: `all` `main` or a number representing the index of the screen.
+Default: `main`
+
+The screen to get the wallpaper from.
 
 ### .set(imagePath, [options])
 
@@ -48,13 +60,23 @@ Path to the image to set as the desktop wallpaper.
 
 Type: `Object`
 
-##### scale
+##### screen *(macOS only)*
+
+Type: `string` `number`<br>
+Values: `all` `main` or a number representing the index of the screen.
+Default: `all`
+
+The screen to set the wallpaper on.
+
+*On Linux and Windows it's hard-coded to `main`.*
+
+##### scale *(macOS only*
 
 Type: `string`<br>
-Values: `fill` `fit` `stretch` `center`<br>
-Default: Current system setting
+Values: `auto` `fill` `fit` `stretch` `center`<br>
+Default: `auto`
 
-Scaling method. Only available on macOS.
+Scaling method.
 
 
 ## Related
