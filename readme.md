@@ -39,7 +39,7 @@ Type: `Object`
 ##### screen *(macOS only)*
 
 Type: `string` `number`<br>
-Values: `all` `main` or a number representing the index of the screen.
+Values: `all` `main` or the index of a screen from `.screens()`
 Default: `main`
 
 The screen to get the wallpaper from.
@@ -61,20 +61,31 @@ Type: `Object`
 ##### screen *(macOS only)*
 
 Type: `string` `number`<br>
-Values: `all` `main` or a number representing the index of the screen.
+Values: `all` `main` or the index of a screen from `.screens()`
 Default: `all`
 
 The screen to set the wallpaper on.
 
 *On Linux and Windows it's hard-coded to `main`.*
 
-##### scale *(macOS only*
+##### scale *(macOS only)*
 
 Type: `string`<br>
 Values: `auto` `fill` `fit` `stretch` `center`<br>
 Default: `auto`
 
 Scaling method.
+
+### .screens() *(macOS only)*
+
+Returns a promise for an array of screens.
+
+```js
+(async () => {
+	await wallpaper.screens();
+	//=> ['Color LCD']
+})();
+```
 
 
 ## Related

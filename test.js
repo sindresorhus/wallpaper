@@ -10,3 +10,12 @@ test('main', async t => {
 
 	await wallpaper.set(orignalImagePath);
 });
+
+if (process.platform === 'darwin') {
+	test('.screens()', async t => {
+		const screens = await wallpaper.screens();
+		console.log('Screens:', screens);
+		t.true(Array.isArray(screens));
+		t.true(screens[0].length > 4);
+	});
+}
