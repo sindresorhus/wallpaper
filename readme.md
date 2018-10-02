@@ -4,6 +4,8 @@
 
 Works on macOS, Linux, and Windows.
 
+*Maintainer needed for the Linux part of the code. No new Linux-related changes will be accepted until someone with good Linux knowledge volunteers.*
+
 
 ## Install
 
