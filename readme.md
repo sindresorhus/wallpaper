@@ -2,7 +2,7 @@
 
 > Get or set the desktop wallpaper
 
-Works on macOS, Linux, and Windows.
+Works on macOS 10.12+, Linux, and Windows 10+.
 
 *Maintainer needed for the Linux part of the code. No new Linux-related changes will be accepted until someone with good Linux knowledge volunteers.*
 
