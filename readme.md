@@ -19,7 +19,7 @@ $ npm install wallpaper
 ```js
 const wallpaper = require('wallpaper');
 
-(async () => {
+async ( =>  {
 	await wallpaper.set('unicorn.jpg');
 
 	await wallpaper.get();
@@ -83,7 +83,7 @@ Scaling method.
 Returns a promise for an array of screens.
 
 ```js
-(async () => {
+async ( =>  {
 	await wallpaper.screens();
 	//=> ['Color LCD']
 })();
