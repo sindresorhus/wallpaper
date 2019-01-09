@@ -1,5 +1,4 @@
 'use strict';
-
 const childProcess = require('child_process');
 const util = require('util');
 const fs = require('fs');

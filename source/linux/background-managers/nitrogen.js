@@ -1,13 +1,18 @@
 'use strict';
-
-const homeDir = require('os').homedir();
 const path = require('path');
+const os = require('os');
 const {commandExists, execFile, readFile} = require('../util');
+
+const homeDir = os.homedir();
 
 exports.isAvailable = () => commandExists('nitrogen');
 
 exports.set = async imagePath => {
-	await execFile('nitrogen', ['--set-zoom-fill', '--save', imagePath]);
+	await execFile('nitrogen', [
+		'--set-zoom-fill',
+		'--save',
+		imagePath
+	]);
 };
 
 exports.get = async () => {

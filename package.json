@@ -17,7 +17,7 @@
 	},
 	"files": [
 		"index.js",
-		"lib"
+		"source"
 	],
 	"keywords": [
 		"macos",
@@ -31,7 +31,7 @@
 		"photo"
 	],
 	"devDependencies": {
-		"ava": "^0.25.0",
+		"ava": "^1.0.1",
 		"xo": "^0.23.0"
 	}
 }

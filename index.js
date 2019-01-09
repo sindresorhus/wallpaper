@@ -1,9 +1,9 @@
 'use strict';
 
 if (process.platform === 'darwin') {
-	module.exports = require('./lib/macos');
+	module.exports = require('./source/macos');
 } else if (process.platform === 'win32') {
-	module.exports = require('./lib/win');
+	module.exports = require('./source/win');
 } else {
-	module.exports = require('./lib/linux');
+	module.exports = require('./source/linux');
 }

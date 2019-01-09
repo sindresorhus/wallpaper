@@ -1,6 +1,6 @@
 'use strict';
 
-exports.managers = {
+module.exports = {
 	cinnamon: require('./cinnamon'),
 	dconf: require('./dconf'),
 	dcop: require('./dcop'),

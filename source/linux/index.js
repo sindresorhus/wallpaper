@@ -1,7 +1,6 @@
 'use strict';
-
 const path = require('path');
-const {managers} = require('./background-managers');
+const managers = require('./background-managers');
 
 let availableApps;
 

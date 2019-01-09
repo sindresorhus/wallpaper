@@ -1,5 +1,4 @@
 'use strict';
-
 const {commandExists, execFile, hasLine} = require('../util');
 
 exports.isAvailable = async () => {
@@ -9,7 +8,7 @@ exports.isAvailable = async () => {
 
 	try {
 		const {stdout} = await execFile('gsettings', ['list-schemas']);
-		return hasLine(stdout, 'org.mate.background');
+		return hasLine(stdout, 'org.cinnamon.desktop.background');
 	} catch (_) {
 		return false;
 	}
@@ -18,18 +17,18 @@ exports.isAvailable = async () => {
 exports.set = async imagePath => {
 	await execFile('gsettings', [
 		'set',
-		'org.mate.background',
-		'picture-filename',
-		imagePath
+		'org.cinnamon.desktop.background',
+		'picture-uri',
+		`file://${imagePath}`
 	]);
 };
 
 exports.get = async () => {
 	const {stdout} = await execFile('gsettings', [
 		'get',
-		'org.mate.background',
-		'picture-filename'
+		'org.cinnamon.desktop.background',
+		'picture-uri'
 	]);
 
-	return stdout.trim().slice(1, -1);
+	return stdout.trim().slice(8, -1);
 };
