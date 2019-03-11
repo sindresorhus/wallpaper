@@ -35,23 +35,25 @@ declare const wallpaper: {
 	/**
 	 * Get the path to the wallpaper image currently set.
 	 *
-	 * @returns A promise for the path of the current desktop wallpaper.
+	 * @returns The path of the current desktop wallpaper.
 	 */
 	get(options?: GetOptions): Promise<string>;
 
 	/**
 	 * Set a new wallpaper.
 	 *
-	 * @param imagePath - Path to the image to set as the desktop wallpaper.
+	 * @param imagePath - The path to the image to set as the desktop wallpaper.
 	 */
 	set(imagePath: string, options?: SetOptions): Promise<void>;
 
 	/**
 	 * **macOS only.**
 	 *
-	 * @returns A promise for an array of screens.
+	 * @returns The available screens.
 	 *
 	 * @example
+	 *
+	 * import wallpaper from 'wallpaper'l
 	 *
 	 * (async () => {
 	 * 	await wallpaper.screens();
