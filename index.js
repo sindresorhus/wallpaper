@@ -1,9 +1,13 @@
 'use strict';
 
+let wallpaper;
 if (process.platform === 'darwin') {
-	module.exports = require('./source/macos');
+	wallpaper = require('./source/macos');
 } else if (process.platform === 'win32') {
-	module.exports = require('./source/win');
+	wallpaper = require('./source/win');
 } else {
-	module.exports = require('./source/linux');
+	wallpaper = require('./source/linux');
 }
+
+module.exports = wallpaper;
+module.exports.default = wallpaper;
