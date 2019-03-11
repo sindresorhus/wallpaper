@@ -1,9 +1,9 @@
 'use strict';
+const {promisify} = require('util');
 const childProcess = require('child_process');
-const util = require('util');
 const fs = require('fs');
 
-const execFile = util.promisify(childProcess.execFile);
+const execFile = promisify(childProcess.execFile);
 
 exports.commandExists = async cmd => {
 	// `which` all commands and expect stdout to return a positive
@@ -24,5 +24,5 @@ exports.commandExists = async cmd => {
 exports.hasLine = (string, lineToFind) => string.split('\n').find(line => line.trim() === lineToFind);
 
 exports.execFile = execFile;
-exports.exec = util.promisify(childProcess.exec);
-exports.readFile = util.promisify(fs.readFile);
+exports.exec = promisify(childProcess.exec);
+exports.readFile = promisify(fs.readFile);

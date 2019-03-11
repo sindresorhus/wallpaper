@@ -1,15 +1,15 @@
 'use strict';
-const util = require('util');
+const {promisify} = require('util');
 const path = require('path');
 const childProcess = require('child_process');
 
-const execFile = util.promisify(childProcess.execFile);
+const execFile = promisify(childProcess.execFile);
 
 // Binary source → https://github.com/sindresorhus/macos-wallpaper
-const bin = path.join(__dirname, 'macos-wallpaper');
+const binary = path.join(__dirname, 'macos-wallpaper');
 
 exports.get = async () => {
-	const {stdout} = await execFile(bin, ['get']);
+	const {stdout} = await execFile(binary, ['get']);
 	return stdout.trim();
 };
 
@@ -24,7 +24,7 @@ exports.set = async (imagePath, options) => {
 		...options
 	};
 
-	const args = [
+	const arguments_ = [
 		'set',
 		path.resolve(imagePath),
 		'--screen',
@@ -33,10 +33,10 @@ exports.set = async (imagePath, options) => {
 		options.scale
 	];
 
-	await execFile(bin, args);
+	await execFile(binary, arguments_);
 };
 
 exports.screens = async () => {
-	const {stdout} = await execFile(bin, ['screens']);
-	return stdout.trim().split('\n').map(x => x.replace(/^\d+ - /, ''));
+	const {stdout} = await execFile(binary, ['screens']);
+	return stdout.trim().split('\n').map(line => line.replace(/^\d+ - /, ''));
 };

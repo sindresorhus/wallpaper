@@ -45,7 +45,7 @@ Type: `Object`
 ##### screen *(macOS only)*
 
 Type: `string` `number`<br>
-Values: `all` `main` or the index of a screen from `.screens()`
+Values: `all` `main` or the index of a screen from `.screens()`<br>
 Default: `main`
 
 The screen to get the wallpaper from.
@@ -58,7 +58,7 @@ Returns a promise.
 
 Type: `string`
 
-Path to the image to set as the desktop wallpaper.
+The path to the image to set as the desktop wallpaper.
 
 #### options
 
@@ -84,7 +84,7 @@ Scaling method.
 
 ### .screens() *(macOS only)*
 
-Returns a promise for an array of screens.
+Returns a promise for the available screens.
 
 ```js
 (async () => {

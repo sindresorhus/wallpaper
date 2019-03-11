@@ -1,15 +1,15 @@
 'use strict';
-const util = require('util');
+const {promisify} = require('util');
 const path = require('path');
 const childProcess = require('child_process');
 
-const execFile = util.promisify(childProcess.execFile);
+const execFile = promisify(childProcess.execFile);
 
 // Binary source → https://github.com/sindresorhus/win-wallpaper
-const bin = path.join(__dirname, 'win-wallpaper.exe');
+const binary = path.join(__dirname, 'win-wallpaper.exe');
 
 exports.get = async () => {
-	const {stdout} = await execFile(bin);
+	const {stdout} = await execFile(binary);
 	return stdout.trim();
 };
 
@@ -18,5 +18,5 @@ exports.set = async imagePath => {
 		throw new TypeError('Expected a string');
 	}
 
-	await execFile(bin, [path.resolve(imagePath)]);
+	await execFile(binary, [path.resolve(imagePath)]);
 };
