@@ -1,5 +1,5 @@
-import {expectType} from 'tsd-check';
-import wallpaper from '.';
+import {expectType} from 'tsd';
+import wallpaper = require('.');
 
 expectType<Promise<string>>(wallpaper.get());
 expectType<Promise<string>>(wallpaper.get({screen: 'all'}));
