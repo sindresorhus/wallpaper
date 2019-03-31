@@ -10,4 +10,5 @@ if (process.platform === 'darwin') {
 }
 
 module.exports = wallpaper;
+// TODO: remove this in the next major version
 module.exports.default = wallpaper;
