@@ -13,10 +13,6 @@ Works on macOS 10.12+, Linux, and Windows 10+.
 $ npm install wallpaper
 ```
 
-<a href="https://www.patreon.com/sindresorhus">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
 
 ## Usage
 
@@ -100,8 +96,3 @@ Returns a promise for the available screens.
 - [macos-wallpaper](https://github.com/sindresorhus/macos-wallpaper) - macOS binary used in this module
 - [win-wallpaper](https://github.com/sindresorhus/win-wallpaper) - Windows binary used in this module
 - [trash](https://github.com/sindresorhus/trash) - Move files and directories to the trash
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
