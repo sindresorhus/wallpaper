@@ -10,7 +10,7 @@ const binary = path.join(__dirname, 'macos-wallpaper');
 
 exports.get = async () => {
 	const {stdout} = await execFile(binary, ['get']);
-	return stdout.trim();
+	return stdout.trim().match("\n") ? stdout.trim().split("\n") : stdout.trim();
 };
 
 exports.set = async (imagePath, options) => {
