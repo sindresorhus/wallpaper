@@ -30,27 +30,27 @@ const wallpaper = require('wallpaper');
 
 ## API
 
-### .get([options])
+### .get(options?)
 
-Returns a promise for the path of the current desktop wallpaper.
+Returns a `Promise<string>` with the path of the current desktop wallpaper.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### screen *(macOS only)*
 
-Type: `string` `number`<br>
-Values: `all` `main` or the index of a screen from `.screens()`<br>
-Default: `main`
+Type: `string | number`<br>
+Values: `'all'`, `'main'`, or the index of a screen from `.screens()`<br>
+Default: `'main'`
 
 The screen to get the wallpaper from.
 
-If you set `all` then `.get()` will return a `string[]`.
+If you set `'all'` then `.get()` will return a `Promise<string[]>`.
 
 ### .set(imagePath, options?)
 
-Returns a promise.
+Returns a `Promise`.
 
 #### imagePath
 
@@ -60,29 +60,29 @@ The path to the image to set as the desktop wallpaper.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### screen *(macOS only)*
 
-Type: `string` `number`<br>
-Values: `all` `main` or the index of a screen from `.screens()`
-Default: `all`
+Type: `string | number`<br>
+Values: `'all'`, `'main'`, or the index of a screen from `.screens()`
+Default: `'all'`
 
 The screen to set the wallpaper on.
 
-*On Linux and Windows it's hard-coded to `main`.*
+*On Linux and Windows it's hard-coded to `'main'`.*
 
 ##### scale *(macOS only)*
 
 Type: `string`<br>
-Values: `auto` `fill` `fit` `stretch` `center`<br>
-Default: `auto`
+Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`<br>
+Default: `'auto'`
 
 Scaling method.
 
 ### .screens() *(macOS only)*
 
-Returns a promise for the available screens.
+Returns a `Promise<string[]>` with the available screens.
 
 ```js
 (async () => {

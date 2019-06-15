@@ -3,7 +3,9 @@ declare namespace wallpaper {
 		/**
 		__macOS only.__
 
-		The screen to get the wallpaper from. Values: `all` `main` or the index of a screen from `.screens()`.
+		The screen to get the wallpaper from.
+
+		Values: `all`, `main`, or the index of a screen from `.screens()`.
 
 		@default 'main'
 		*/
@@ -14,7 +16,9 @@ declare namespace wallpaper {
 		/**
 		__macOS only.__
 
-		The screen to set the wallpaper on. Values: `all` `main` or the index of a screen from `.screens()`.
+		The screen to set the wallpaper on.
+
+		Values: `all`, `main`, or the index of a screen from `.screens()`.
 
 		*On Linux and Windows it's hard-coded to `main`.*
 

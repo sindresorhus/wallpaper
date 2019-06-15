@@ -19,24 +19,18 @@ exports.get = async ({screen = 'main'} = {}) => {
 	return stdout;
 };
 
-exports.set = async (imagePath, options) => {
+exports.set = async (imagePath, {screen = 'all', scale = 'auto'} = {}) => {
 	if (typeof imagePath !== 'string') {
 		throw new TypeError('Expected a string');
 	}
-
-	options = {
-		screen: 'all',
-		scale: 'auto',
-		...options
-	};
 
 	const arguments_ = [
 		'set',
 		path.resolve(imagePath),
 		'--screen',
-		options.screen,
+		screen,
 		'--scale',
-		options.scale
+		scale
 	];
 
 	await execFile(binary, arguments_);
