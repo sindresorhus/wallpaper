@@ -46,7 +46,9 @@ Default: `main`
 
 The screen to get the wallpaper from.
 
-### .set(imagePath, [options])
+If you set `all` then `.get()` will return a `string[]`.
+
+### .set(imagePath, options?)
 
 Returns a promise.
 
