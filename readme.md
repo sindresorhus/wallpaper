@@ -6,13 +6,11 @@ Works on macOS 10.12+, Linux, and Windows 10+.
 
 *Maintainer needed for the Linux part of the code. No new Linux-related changes will be accepted until someone with good Linux knowledge volunteers.*
 
-
 ## Install
 
 ```
 $ npm install wallpaper
 ```
-
 
 ## Usage
 
@@ -27,7 +25,6 @@ const wallpaper = require('wallpaper');
 })();
 ```
 
-
 ## API
 
 ### .get(options?)
@@ -40,8 +37,8 @@ Type: `object`
 
 ##### screen *(macOS only)*
 
-Type: `string | number`<br>
-Values: `'all'`, `'main'`, or the index of a screen from `.screens()`<br>
+Type: `string | number`\
+Values: `'all'`, `'main'`, or the index of a screen from `.screens()`\
 Default: `'main'`
 
 The screen to get the wallpaper from.
@@ -64,7 +61,7 @@ Type: `object`
 
 ##### screen *(macOS only)*
 
-Type: `string | number`<br>
+Type: `string | number`\
 Values: `'all'`, `'main'`, or the index of a screen from `.screens()`
 Default: `'all'`
 
@@ -74,8 +71,8 @@ The screen to set the wallpaper on.
 
 ##### scale *(macOS only)*
 
-Type: `string`<br>
-Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`<br>
+Type: `string`\
+Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`\
 Default: `'auto'`
 
 Scaling method.
@@ -91,6 +88,21 @@ Returns a `Promise<string[]>` with the available screens.
 })();
 ```
 
+## FAQ
+
+#### How can I set a website as a static wallpaper?
+
+If you only need a static snapshot of the website, you can use [`capture-website`](https://github.com/sindresorhus/capture-website) and then pass the result to this package. You can make it semi-dynamic, by capturing the website snapshot every 10 seconds, for example.
+
+#### How can I set a website, video, or WebGL as a dynamic wallpaper?
+
+You cannot use this package to set a dynamic wallpaper.
+
+On macOS, check out [Plash](https://github.com/sindresorhus/Plash), which lets you set any website as your wallpaper. The website could contain a fullscreen video, WebGL, slideshow, animated, etc.
+
+You can also do this with Electron on macOS and Linux by using [`new BrowserWindow({type: 'desktop'})`](https://electronjs.org/docs/api/browser-window#new-browserwindowoptions).
+
+On Windows, I have no idea. PR welcome to add more info.
 
 ## Related
 
