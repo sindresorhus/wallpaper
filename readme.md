@@ -102,7 +102,7 @@ On macOS, check out [Plash](https://github.com/sindresorhus/Plash), which lets y
 
 You can also do this with Electron on macOS and Linux by using [`new BrowserWindow({type: 'desktop'})`](https://electronjs.org/docs/api/browser-window#new-browserwindowoptions).
 
-On Windows, I have no idea. PR welcome to add more info.
+On Windows, you can use [Wallpaper Engine](wallpaperengine.io). It's available on Steam, HumbleBundle and Green Man Gaming for around 4 EUR / USD.
 
 ## Related
 
