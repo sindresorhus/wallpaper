@@ -10,6 +10,7 @@ module.exports = {
 	mate: require('./mate'),
 	nitrogen: require('./nitrogen'),
 	pcmanfm: require('./pcmanfm'),
+	qdbus: require('./qdbus'),
 	setroot: require('./setroot'),
 	xfconfquery: require('./xfconf-query')
 };
