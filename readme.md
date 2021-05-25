@@ -88,6 +88,34 @@ Returns a `Promise<string[]>` with the available screens.
 })();
 ```
 
+### .setSolidColor(color, options?) *(macOS only)*
+
+Returns a `Promise`.
+
+#### color
+
+Type: `string`
+
+The color to set.
+
+#### options
+
+Type: `object`
+
+##### screen
+
+Type: `string | number`\
+Values: `'all'`, `'main'`, or the index of a screen from `.screens()`
+Default: `'all'`
+
+The screen to set the wallpaper on.
+
+```js
+(async () => {
+	await wallpaper.setSolidColor('000000');
+})();
+```
+
 ## FAQ
 
 #### How can I set a website as a static wallpaper?

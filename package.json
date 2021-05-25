@@ -13,7 +13,8 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"ava": "ava -s",
+		"test": "xo && ava -s && tsd"
 	},
 	"files": [
 		"index.js",
