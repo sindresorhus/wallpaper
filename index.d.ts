@@ -88,6 +88,21 @@ declare const wallpaper: {
 	*/
 	screens?(): Promise<string[]>;
 
+	/**
+	__macOS only.__
+	Set a solid color.
+
+	@example
+	```
+	import wallpaper from 'wallpaper';
+
+	(async () => {
+		await wallpaper.setSolidColor('000000');
+	})();
+	```
+	*/
+	setSolidColor?(color: string, options?: wallpaper.SetOptions): Promise<void>
+
 	// TODO: remove this in the next major version
 	// when removed, each of the methods in this interface can be refactored to an explicit function export
 	// and `wallpaper` namespace may be removed completely along with the `export = wallpaper` export.
