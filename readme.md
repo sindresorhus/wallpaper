@@ -96,7 +96,7 @@ Returns a `Promise`.
 
 Type: `string`
 
-The color to set.
+The color to set as a RGB hex value (ex. `000000` for black).
 
 #### options
 

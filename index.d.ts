@@ -90,7 +90,10 @@ declare const wallpaper: {
 
 	/**
 	__macOS only.__
+
 	Set a solid color.
+
+	@param color - The color to set as a RGB hex value (ex. `000000` for black).
 
 	@example
 	```

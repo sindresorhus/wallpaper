@@ -12,8 +12,10 @@
 	"engines": {
 		"node": ">=8"
 	},
+	"ava": {
+		"serial": true
+	},
 	"scripts": {
-		"ava": "ava -s",
 		"test": "xo && ava -s && tsd"
 	},
 	"files": [
