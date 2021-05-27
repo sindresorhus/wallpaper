@@ -12,11 +12,8 @@
 	"engines": {
 		"node": ">=8"
 	},
-	"ava": {
-		"serial": true
-	},
 	"scripts": {
-		"test": "xo && ava -s && tsd"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
 		"index.js",
@@ -38,5 +35,8 @@
 		"ava": "^2.1.0",
 		"tsd": "^0.7.1",
 		"xo": "^0.24.0"
+	},
+	"ava": {
+		"serial": true
 	}
 }
