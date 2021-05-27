@@ -93,7 +93,7 @@ declare const wallpaper: {
 
 	Set a solid color.
 
-	@param color - The color to set as a RGB hex value (ex. `000000` for black).
+	@param color - The color to set as a RGB Hex value. For example, `000000` for black.
 
 	@example
 	```
@@ -104,7 +104,7 @@ declare const wallpaper: {
 	})();
 	```
 	*/
-	setSolidColor?(color: string, options?: wallpaper.SetOptions): Promise<void>
+	setSolidColor?(rgbHexColor: string, options?: wallpaper.SetOptions): Promise<void>
 
 	// TODO: remove this in the next major version
 	// when removed, each of the methods in this interface can be refactored to an explicit function export
