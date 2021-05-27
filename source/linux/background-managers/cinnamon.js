@@ -1,5 +1,5 @@
 'use strict';
-const {commandExists, execFile, hasLine} = require('../util');
+const {commandExists, execFile, hasLine} = require('../util.js');
 
 exports.isAvailable = async () => {
 	if (!await commandExists('gsettings')) {
@@ -9,7 +9,7 @@ exports.isAvailable = async () => {
 	try {
 		const {stdout} = await execFile('gsettings', ['list-schemas']);
 		return hasLine(stdout, 'org.cinnamon.desktop.background');
-	} catch (_) {
+	} catch {
 		return false;
 	}
 };

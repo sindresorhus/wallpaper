@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 const os = require('os');
-const {commandExists, execFile, readFile} = require('../util');
+const {commandExists, execFile, readFile} = require('../util.js');
 
 const homeDir = os.homedir();
 

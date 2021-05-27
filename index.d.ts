@@ -37,7 +37,13 @@ declare namespace wallpaper {
 	}
 }
 
+// eslint-disable-next-line no-redeclare
 declare const wallpaper: {
+	// TODO: remove this in the next major version
+	// when removed, each of the methods in this interface can be refactored to an explicit function export
+	// and `wallpaper` namespace may be removed completely along with the `export = wallpaper` export.
+	default: typeof wallpaper;
+
 	/**
 	Get the path to the wallpaper image currently set.
 
@@ -104,12 +110,7 @@ declare const wallpaper: {
 	})();
 	```
 	*/
-	setSolidColor?(rgbHexColor: string, options?: wallpaper.SetOptions): Promise<void>
-
-	// TODO: remove this in the next major version
-	// when removed, each of the methods in this interface can be refactored to an explicit function export
-	// and `wallpaper` namespace may be removed completely along with the `export = wallpaper` export.
-	default: typeof wallpaper;
+	setSolidColor?(rgbHexColor: string, options?: wallpaper.SetOptions): Promise<void>;
 };
 
 export = wallpaper;

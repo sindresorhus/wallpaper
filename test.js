@@ -1,6 +1,6 @@
 import path from 'path';
 import test from 'ava';
-import wallpaper from '.';
+import wallpaper from './index.js';
 
 const MACOS_COLOR_PLACEHOLDER_PATH = '/System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane/Contents/Resources/DesktopPictures.prefPane/Contents/Resources/Transparent.tiff';
 

@@ -16,7 +16,7 @@ exports.commandExists = async cmd => {
 		}
 
 		return true;
-	} catch (_) {
+	} catch {
 		return false;
 	}
 };

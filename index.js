@@ -2,11 +2,11 @@
 
 let wallpaper;
 if (process.platform === 'darwin') {
-	wallpaper = require('./source/macos');
+	wallpaper = require('./source/macos.js');
 } else if (process.platform === 'win32') {
-	wallpaper = require('./source/win');
+	wallpaper = require('./source/windows.js');
 } else {
-	wallpaper = require('./source/linux');
+	wallpaper = require('./source/linux.js');
 }
 
 module.exports = wallpaper;

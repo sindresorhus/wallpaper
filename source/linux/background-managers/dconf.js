@@ -1,5 +1,5 @@
 'use strict';
-const {commandExists, execFile} = require('../util');
+const {commandExists, execFile} = require('../util.js');
 
 exports.isAvailable = () => commandExists('dconf');
 
