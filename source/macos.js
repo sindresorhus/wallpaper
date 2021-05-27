@@ -36,6 +36,21 @@ exports.set = async (imagePath, {screen = 'all', scale = 'auto'} = {}) => {
 	await execFile(binary, arguments_);
 };
 
+exports.setSolidColor = async (color, {screen = 'all'} = {}) => {
+	if (typeof color !== 'string') {
+		throw new TypeError('Expected a string');
+	}
+
+	const arguments_ = [
+		'set-solid-color',
+		color,
+		'--screen',
+		screen
+	];
+
+	await execFile(binary, arguments_);
+};
+
 exports.screens = async () => {
 	const {stdout} = await execFile(binary, ['screens']);
 	return stdout.trim().split('\n').map(line => line.replace(/^\d+ - /, ''));
