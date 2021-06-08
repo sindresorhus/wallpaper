@@ -6,7 +6,7 @@ if (process.platform === 'darwin') {
 } else if (process.platform === 'win32') {
 	wallpaper = require('./source/windows.js');
 } else {
-	wallpaper = require('./source/linux.js');
+	wallpaper = require('./source/linux/index.js');
 }
 
 module.exports = wallpaper;
