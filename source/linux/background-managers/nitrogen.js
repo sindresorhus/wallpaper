@@ -1,23 +1,23 @@
-'use strict';
-const path = require('path');
-const os = require('os');
-const {commandExists, execFile, readFile} = require('../util.js');
+import path from 'node:path';
+import os from 'node:os';
+import {commandExists, execFile, readFile} from '../util.js';
 
-const homeDir = os.homedir();
+const homeDirectory = os.homedir();
 
-exports.isAvailable = () => commandExists('nitrogen');
+export async function isAvailable() {
+	return commandExists('nitrogen');
+}
 
-exports.set = async imagePath => {
+export async function get() {
+	const configFile = path.join(homeDirectory, '.config/nitrogen/bg-saved.cfg');
+	const config = await readFile(configFile, 'utf8');
+	return config.trim().split('\n').find(line => line.startsWith('file=')).replace('file=', '');
+}
+
+export async function set(imagePath) {
 	await execFile('nitrogen', [
 		'--set-zoom-fill',
 		'--save',
-		imagePath
+		imagePath,
 	]);
-};
-
-exports.get = async () => {
-	const configFile = path.join(homeDir, '.config/nitrogen/bg-saved.cfg');
-	const config = await readFile(configFile, 'utf8');
-
-	return config.trim().split('\n').find(line => line.startsWith('file=')).replace('file=', '');
-};
+}

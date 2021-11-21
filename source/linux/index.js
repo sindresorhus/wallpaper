@@ -1,6 +1,5 @@
-'use strict';
-const path = require('path');
-const managers = require('./background-managers/index.js');
+import path from 'node:path';
+import * as managers from './background-managers/index.js';
 
 let availableApps;
 
@@ -16,10 +15,10 @@ async function setAvailableApps() {
 	await Promise.all(promises);
 }
 
-exports.get = async () => {
+export async function getWallpaper() {
 	if (!availableApps) {
 		await setAvailableApps();
-		return exports.get();
+		return getWallpaper();
 	}
 
 	const wallpapersVoted = new Map();
@@ -52,16 +51,16 @@ exports.get = async () => {
 	}
 
 	return wallpaperMostVoted;
-};
+}
 
-exports.set = async imagePath => {
+export async function setWallpaper(imagePath) {
 	if (typeof imagePath !== 'string') {
 		throw new TypeError('Expected a string');
 	}
 
 	if (!availableApps) {
 		await setAvailableApps();
-		await exports.set(imagePath);
+		await setWallpaper(imagePath);
 		return;
 	}
 
@@ -71,5 +70,5 @@ exports.set = async imagePath => {
 		}
 	});
 
-	await Promise.all(promises.map(promise => promise.catch(() => {})));
-};
+	await Promise.allSettled(promises);
+}

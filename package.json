@@ -9,8 +9,10 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=12"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -32,9 +34,9 @@
 		"photo"
 	],
 	"devDependencies": {
-		"ava": "^2.1.0",
-		"tsd": "^0.15.1",
-		"xo": "^0.39.0"
+		"ava": "^3.15.0",
+		"tsd": "^0.19.0",
+		"xo": "^0.46.4"
 	},
 	"ava": {
 		"serial": true

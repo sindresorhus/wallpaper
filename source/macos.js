@@ -1,14 +1,15 @@
-'use strict';
-const {promisify} = require('util');
-const path = require('path');
-const childProcess = require('child_process');
+import {promisify} from 'node:util';
+import childProcess from 'node:child_process';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const execFile = promisify(childProcess.execFile);
 
 // Binary source → https://github.com/sindresorhus/macos-wallpaper
 const binary = path.join(__dirname, 'macos-wallpaper');
 
-exports.get = async ({screen = 'main'} = {}) => {
+export async function getWallpaper({screen = 'main'} = {}) {
 	let {stdout} = await execFile(binary, ['get', '--screen', screen]);
 	stdout = stdout.trim();
 
@@ -17,9 +18,9 @@ exports.get = async ({screen = 'main'} = {}) => {
 	}
 
 	return stdout;
-};
+}
 
-exports.set = async (imagePath, {screen = 'all', scale = 'auto'} = {}) => {
+export async function setWallpaper(imagePath, {screen = 'all', scale = 'auto'} = {}) {
 	if (typeof imagePath !== 'string') {
 		throw new TypeError('Expected a string');
 	}
@@ -30,13 +31,13 @@ exports.set = async (imagePath, {screen = 'all', scale = 'auto'} = {}) => {
 		'--screen',
 		screen,
 		'--scale',
-		scale
+		scale,
 	];
 
 	await execFile(binary, arguments_);
-};
+}
 
-exports.setSolidColor = async (color, {screen = 'all'} = {}) => {
+export async function setSolidColorWallpaper(color, {screen = 'all'} = {}) {
 	if (typeof color !== 'string') {
 		throw new TypeError('Expected a string');
 	}
@@ -45,13 +46,13 @@ exports.setSolidColor = async (color, {screen = 'all'} = {}) => {
 		'set-solid-color',
 		color,
 		'--screen',
-		screen
+		screen,
 	];
 
 	await execFile(binary, arguments_);
-};
+}
 
-exports.screens = async () => {
+export async function screens() {
 	const {stdout} = await execFile(binary, ['screens']);
 	return stdout.trim().split('\n').map(line => line.replace(/^\d+ - /, ''));
-};
+}

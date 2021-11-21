@@ -1,116 +1,96 @@
-declare namespace wallpaper {
-	interface GetOptions {
-		/**
-		__macOS only.__
+export interface GetOptions {
+	/**
+	__macOS only.__
 
-		The screen to get the wallpaper from.
+	The screen to get the wallpaper from.
 
-		Values: `all`, `main`, or the index of a screen from `.screens()`.
+	Values: `all`, `main`, or the index of a screen from `.screens()`.
 
-		@default 'main'
-		*/
-		readonly screen?: 'all' | 'main' | number;
-	}
-
-	interface SetOptions {
-		/**
-		__macOS only.__
-
-		The screen to set the wallpaper on.
-
-		Values: `all`, `main`, or the index of a screen from `.screens()`.
-
-		*On Linux and Windows it's hard-coded to `main`.*
-
-		@default 'all'
-		*/
-		readonly screen?: 'all' | 'main' | number;
-
-		/**
-		__macOS only.__
-
-		Scaling method. Values: `auto` `fill` `fit` `stretch` `center`.
-
-		@default 'auto'
-		*/
-		readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center';
-	}
+	@default 'main'
+	*/
+	readonly screen?: 'all' | 'main' | number;
 }
 
-// eslint-disable-next-line no-redeclare
-declare const wallpaper: {
-	// TODO: remove this in the next major version
-	// when removed, each of the methods in this interface can be refactored to an explicit function export
-	// and `wallpaper` namespace may be removed completely along with the `export = wallpaper` export.
-	default: typeof wallpaper;
-
+export interface SetOptions {
 	/**
-	Get the path to the wallpaper image currently set.
+	__macOS only.__
 
-	@returns The path of the current desktop wallpaper.
+	The screen to set the wallpaper on.
 
-	@example
-	```
-	import wallpaper = require('wallpaper');
+	Values: `all`, `main`, or the index of a screen from `.screens()`.
 
-	(async () => {
-		await wallpaper.get();
-		//=> '/Users/sindresorhus/unicorn.jpg'
-	})();
-	```
+	*On Linux and Windows it's hard-coded to `main`.*
+
+	@default 'all'
 	*/
-	get(options?: wallpaper.GetOptions): Promise<string>;
-
-	/**
-	Set a new wallpaper.
-
-	@param imagePath - The path to the image to set as the desktop wallpaper.
-
-	@example
-	```
-	import wallpaper = require('wallpaper');
-
-	(async () => {
-		await wallpaper.set('unicorn.jpg');
-	})();
-	```
-	*/
-	set(imagePath: string, options?: wallpaper.SetOptions): Promise<void>;
+	readonly screen?: 'all' | 'main' | number;
 
 	/**
 	__macOS only.__
 
-	@returns The available screens.
+	Scaling method. Values: `auto` `fill` `fit` `stretch` `center`.
 
-	@example
-	```
-	import wallpaper from 'wallpaper';
-
-	(async () => {
-		await wallpaper.screens();
-		//=> ['Color LCD']
-	})();
-	```
+	@default 'auto'
 	*/
-	screens?(): Promise<string[]>;
+	readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center';
+}
 
-	/**
-	__macOS only.__
+/**
+Get the path to the wallpaper image currently set.
 
-	Set a solid color.
+@returns The path of the current desktop wallpaper.
 
-	@param color - The color to set as a RGB Hex value. For example, `000000` for black.
+@example
+```
+import {getWallpaper} from 'wallpaper';
 
-	@example
-	```
-	import wallpaper from 'wallpaper';
+await getWallpaper();
+//=> '/Users/sindresorhus/unicorn.jpg'
+```
+*/
+export function getWallpaper(options?: GetOptions): Promise<string>;
 
-	(async () => {
-		await wallpaper.setSolidColor('000000');
-	})();
-	```
-	*/
-	setSolidColor?(rgbHexColor: string, options?: wallpaper.SetOptions): Promise<void>;
-};
+/**
+Set a new wallpaper.
 
-export = wallpaper;
+@param imagePath - The path to the image to set as the desktop wallpaper.
+
+@example
+```
+import {setWallpaper} from 'wallpaper';
+
+await setWallpaper('unicorn.jpg');
+```
+*/
+export function setWallpaper(imagePath: string, options?: SetOptions): Promise<void>;
+
+/**
+__macOS only.__
+
+@returns The available screens.
+
+@example
+```
+import {screens} from 'wallpaper';
+
+await screens();
+//=> ['Color LCD']
+```
+*/
+export function screens(): Promise<string[]>;
+
+/**
+__macOS only.__
+
+Set a solid color.
+
+@param color - The color to set as a RGB Hex value. For example, `000000` for black.
+
+@example
+```
+import {setSolidColorWallpaper} from 'wallpaper';
+
+await setSolidColorWallpaper('000000');
+```
+*/
+export function setSolidColorWallpaper(rgbHexColor: string, options?: SetOptions): Promise<void>;

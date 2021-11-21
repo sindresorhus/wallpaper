@@ -1,33 +1,34 @@
-import path from 'path';
+import process from 'node:process';
+import path from 'node:path';
 import test from 'ava';
-import wallpaper from './index.js';
+import {getWallpaper, setWallpaper, setSolidColorWallpaper, screens} from './index.js';
 
 const MACOS_COLOR_PLACEHOLDER_PATH = '/System/Library/PreferencePanes/DesktopScreenEffectsPref.prefPane/Contents/Resources/DesktopPictures.prefPane/Contents/Resources/Transparent.tiff';
 
 test('main', async t => {
-	const orignalImagePath = await wallpaper.get();
+	const orignalImagePath = await getWallpaper();
 
-	await wallpaper.set('fixture.jpg');
-	t.is(await wallpaper.get(), path.resolve('fixture.jpg'));
+	await setWallpaper('fixture.jpg');
+	t.is(await getWallpaper(), path.resolve('fixture.jpg'));
 
-	await wallpaper.set(orignalImagePath);
+	await setWallpaper(orignalImagePath);
 });
 
 if (process.platform === 'darwin') {
-	test('.screens()', async t => {
-		const screens = await wallpaper.screens();
-		console.log('Screens:', screens);
-		t.true(Array.isArray(screens));
-		t.true(screens[0].length > 4);
+	test('screens()', async t => {
+		const screens_ = await screens();
+		console.log('Screens:', screens_);
+		t.true(Array.isArray(screens_));
+		t.true(screens_[0].length > 4);
 	});
 
-	test('.setSolidColor()', async t => {
-		const originalImagePath = await wallpaper.get();
+	test('setSolidColorWallpaper()', async t => {
+		const originalImagePath = await getWallpaper();
 
-		await wallpaper.setSolidColor('000000');
+		await setSolidColorWallpaper('000000');
 
-		t.is(await wallpaper.get(), MACOS_COLOR_PLACEHOLDER_PATH);
+		t.is(await getWallpaper(), MACOS_COLOR_PLACEHOLDER_PATH);
 
-		await wallpaper.set(originalImagePath);
+		await setWallpaper(originalImagePath);
 	});
 }

@@ -1,7 +1,6 @@
-'use strict';
-const {commandExists, execFile, hasLine} = require('../util.js');
+import {commandExists, execFile, hasLine} from '../util.js';
 
-exports.isAvailable = async () => {
+export async function isAvailable() {
 	if (!await commandExists('gsettings')) {
 		return false;
 	}
@@ -12,23 +11,23 @@ exports.isAvailable = async () => {
 	} catch {
 		return false;
 	}
-};
+}
 
-exports.set = async imagePath => {
+export async function get() {
+	const {stdout} = await execFile('gsettings', [
+		'get',
+		'org.mate.background',
+		'picture-filename',
+	]);
+
+	return stdout.trim().slice(1, -1);
+}
+
+export async function set(imagePath) {
 	await execFile('gsettings', [
 		'set',
 		'org.mate.background',
 		'picture-filename',
-		imagePath
+		imagePath,
 	]);
-};
-
-exports.get = async () => {
-	const {stdout} = await execFile('gsettings', [
-		'get',
-		'org.mate.background',
-		'picture-filename'
-	]);
-
-	return stdout.trim().slice(1, -1);
-};
+}

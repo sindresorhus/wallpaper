@@ -1,8 +1,9 @@
-'use strict';
-const {commandExists, execFile} = require('../util.js');
+import {commandExists, execFile} from '../util.js';
 
-exports.isAvailable = () => commandExists('pcmanfm');
+export async function isAvailable() {
+	return commandExists('pcmanfm');
+}
 
-exports.set = async imagePath => {
+export async function set(imagePath) {
 	await execFile('pcmanfm', ['--set-wallpaper', imagePath]);
-};
+}

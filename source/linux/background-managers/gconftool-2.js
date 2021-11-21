@@ -1,14 +1,15 @@
-'use strict';
-const {commandExists, execFile} = require('../util.js');
+import {commandExists, execFile} from '../util.js';
 
-exports.isAvailable = () => commandExists('gconftool-2');
+export async function isAvailable() {
+	return commandExists('gconftool-2');
+}
 
-exports.set = async imagePath => {
+export async function set(imagePath) {
 	await execFile('gconftool-2', [
 		'--set',
 		'/desktop/gnome/background/picture_filename',
 		'--type',
 		'string',
-		imagePath
+		imagePath,
 	]);
-};
+}

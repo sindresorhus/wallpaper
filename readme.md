@@ -8,26 +8,24 @@ Works on macOS 10.14.4+, Linux, and Windows 10+.
 
 ## Install
 
-```
-$ npm install wallpaper
+```sh
+npm install wallpaper
 ```
 
 ## Usage
 
 ```js
-const wallpaper = require('wallpaper');
+import {getWallpaper, setWallpaper} from 'wallpaper';
 
-(async () => {
-	await wallpaper.set('unicorn.jpg');
+await setWallpaper('unicorn.jpg');
 
-	await wallpaper.get();
-	//=> '/Users/sindresorhus/unicorn.jpg'
-})();
+await getWallpaper();
+//=> '/Users/sindresorhus/unicorn.jpg'
 ```
 
 ## API
 
-### .get(options?)
+### getWallpaper(options?)
 
 Returns a `Promise<string>` with the path of the current desktop wallpaper.
 
@@ -43,9 +41,9 @@ Default: `'main'`
 
 The screen to get the wallpaper from.
 
-If you set `'all'` then `.get()` will return a `Promise<string[]>`.
+If you set `'all'` then `getWallpaper()` will return a `Promise<string[]>`.
 
-### .set(imagePath, options?)
+### setWallpaper(imagePath, options?)
 
 Returns a `Promise`.
 
@@ -77,18 +75,7 @@ Default: `'auto'`
 
 Scaling method.
 
-### .screens() *(macOS only)*
-
-Returns a `Promise<string[]>` with the available screens.
-
-```js
-(async () => {
-	await wallpaper.screens();
-	//=> ['Color LCD']
-})();
-```
-
-### .setSolidColor(color, options?) *(macOS only)*
+### setSolidColorWallpaper(color, options?) *(macOS only)*
 
 Returns a `Promise`.
 
@@ -111,9 +98,20 @@ Default: `'all'`
 The screen to set the wallpaper on.
 
 ```js
-(async () => {
-	await wallpaper.setSolidColor('000000');
-})();
+import {setSolidColorWallpaper} from 'wallpaper';
+
+await setSolidColorWallpaper('000000');
+```
+
+### screens() *(macOS only)*
+
+Returns a `Promise<string[]>` with the available screens.
+
+```js
+import {screens} from 'wallpaper';
+
+await screens();
+//=> ['Color LCD']
 ```
 
 ## FAQ

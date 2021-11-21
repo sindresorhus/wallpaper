@@ -1,21 +1,21 @@
 import {expectType} from 'tsd';
-import wallpaper = require('.');
+import {getWallpaper, setWallpaper, screens} from './index.js';
 
-expectType<Promise<string>>(wallpaper.get());
-expectType<Promise<string>>(wallpaper.get({screen: 'all'}));
-expectType<Promise<string>>(wallpaper.get({screen: 'main'}));
-expectType<Promise<string>>(wallpaper.get({screen: 0}));
+expectType<Promise<string>>(getWallpaper());
+expectType<Promise<string>>(getWallpaper({screen: 'all'}));
+expectType<Promise<string>>(getWallpaper({screen: 'main'}));
+expectType<Promise<string>>(getWallpaper({screen: 0}));
 
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg'));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {screen: 'all'}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {screen: 'main'}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {screen: 0}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {scale: 'auto'}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {scale: 'fill'}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {scale: 'fit'}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {scale: 'stretch'}));
-expectType<Promise<void>>(wallpaper.set('unicorn.jpg', {scale: 'center'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg'));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {screen: 'all'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {screen: 'main'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {screen: 0}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {scale: 'auto'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {scale: 'fill'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {scale: 'fit'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {scale: 'stretch'}));
+expectType<Promise<void>>(setWallpaper('unicorn.jpg', {scale: 'center'}));
 
-if (wallpaper.screens) {
-	expectType<Promise<string[]>>(wallpaper.screens());
+if (screens) {
+	expectType<Promise<string[]>>(screens());
 }

@@ -1,13 +1,14 @@
-'use strict';
-const {commandExists, execFile} = require('../util.js');
+import {commandExists, execFile} from '../util.js';
 
-exports.isAvailable = () => commandExists('dcop');
+export async function isAvailable() {
+	return commandExists('dcop');
+}
 
-exports.set = async imagePath => {
+export async function set(imagePath) {
 	await execFile('dcop', [
 		'kdesktop',
 		'KBackgroundIface',
 		'setWallpaper',
-		`${imagePath} 1`
+		`${imagePath} 1`,
 	]);
-};
+}

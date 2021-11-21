@@ -1,14 +1,15 @@
-'use strict';
+import process from 'node:process';
+import * as macos from './source/macos.js';
+import * as linux from './source/linux/index.js';
+import * as windows from './source/windows.js';
 
 let wallpaper;
 if (process.platform === 'darwin') {
-	wallpaper = require('./source/macos.js');
+	wallpaper = macos;
 } else if (process.platform === 'win32') {
-	wallpaper = require('./source/windows.js');
+	wallpaper = windows;
 } else {
-	wallpaper = require('./source/linux/index.js');
+	wallpaper = linux;
 }
 
-module.exports = wallpaper;
-// TODO: remove this in the next major version
-module.exports.default = wallpaper;
+export const {getWallpaper, setWallpaper, setSolidColorWallpaper, screens} = wallpaper;

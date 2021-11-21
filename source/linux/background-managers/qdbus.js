@@ -1,9 +1,10 @@
-'use strict';
-const {commandExists, execFile} = require('../util.js');
+import {commandExists, execFile} from '../util.js';
 
-exports.isAvailable = () => commandExists('qdbus');
+export async function isAvailable() {
+	return commandExists('qdbus');
+}
 
-exports.set = async imagePath => {
+export async function set(imagePath) {
 	await execFile('qdbus', [
 		'org.kde.plasmashell',
 		'/PlasmaShell',
@@ -16,6 +17,6 @@ exports.set = async imagePath => {
 			desktop.currentConfigGroup = ['Wallpaper', 'org.kde.image', 'General'];
 			desktop.writeConfig('Image', 'file://${imagePath}');
 		}
-		`
+		`,
 	]);
-};
+}

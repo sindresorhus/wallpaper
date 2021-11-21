@@ -1,16 +1,12 @@
-'use strict';
-
-module.exports = {
-	cinnamon: require('./cinnamon.js'),
-	dconf: require('./dconf.js'),
-	dcop: require('./dcop.js'),
-	feh: require('./feh.js'),
-	gconftool2: require('./gconftool-2.js'),
-	gnome: require('./gnome.js'),
-	mate: require('./mate.js'),
-	nitrogen: require('./nitrogen.js'),
-	pcmanfm: require('./pcmanfm.js'),
-	qdbus: require('./qdbus.js'),
-	setroot: require('./setroot.js'),
-	xfconfquery: require('./xfconf-query.js')
-};
+export * as cinnamon from './cinnamon.js';
+export * as dconf from './dconf.js';
+export * as dcop from './dcop.js';
+export * as feh from './feh.js';
+export * as gconftool2 from './gconftool-2.js';
+export * as gnome from './gnome.js';
+export * as mate from './mate.js';
+export * as nitrogen from './nitrogen.js';
+export * as pcmanfm from './pcmanfm.js';
+export * as qdbus from './qdbus.js';
+export * as setroot from './setroot.js';
+export * as xfconfquery from './xfconf-query.js';
