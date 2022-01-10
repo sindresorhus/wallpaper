@@ -1,6 +1,6 @@
 {
 	"name": "wallpaper",
-	"version": "6.0.0",
+	"version": "6.1.0",
 	"description": "Manage the desktop wallpaper",
 	"license": "MIT",
 	"repository": "sindresorhus/wallpaper",
