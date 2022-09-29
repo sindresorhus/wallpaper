@@ -27,19 +27,10 @@ export async function get() {
 }
 
 export async function set(imagePath) {
-	if (isDarkTheme()) {
-		await execFile('gsettings', [
-			'set',
-			'org.gnome.desktop.background',
-			'picture-uri-dark',
-			`file://${imagePath}`,
-		]);
-	} else {
-		await execFile('gsettings', [
-			'set',
-			'org.gnome.desktop.background',
-			'picture-uri',
-			`file://${imagePath}`,
-		]);
-	}
+	await execFile('gsettings', [
+		'set',
+		'org.gnome.desktop.background',
+		(isDarkTheme()) ? 'picture-uri-dark' : 'picture-uri',
+		`file://${imagePath}`,
+	]);
 }
