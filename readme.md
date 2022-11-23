@@ -126,7 +126,7 @@ You cannot use this package to set a dynamic wallpaper.
 
 On macOS, check out [Plash](https://github.com/sindresorhus/Plash), which lets you set any website as your wallpaper. The website could contain a fullscreen video, WebGL, slideshow, animated, etc.
 
-You can also do this with Electron on macOS and Linux by using [`new BrowserWindow({type: 'desktop'})`](https://electronjs.org/docs/api/browser-window#new-browserwindowoptions).
+You can also do this with Electron on macOS and Linux by using [`new BrowserWindow({type: 'desktop'})`](https://www.electronjs.org/docs/latest/api/browser-window#new-browserwindowoptions).
 
 On Windows, you can use [Wallpaper Engine](https://wallpaperengine.io). It's available on Steam, HumbleBundle, and Green Man Gaming for around 4 USD.
 
