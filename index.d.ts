@@ -28,8 +28,8 @@ export interface SetOptions {
 	/**
 	__macOS & Windows__
 
-	Scaling method. 
-	
+	Scaling method.
+
 	MacOS Values: `auto` `fill` `fit` `stretch` `center`.
 
 	Windows Values: `stretch` `center` `tile` `span` `max` `crop-to-fit` `keep-aspect-ratio`.
