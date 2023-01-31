@@ -14,10 +14,16 @@ export async function getWallpaper() {
 	return stdout.trim();
 }
 
-export async function setWallpaper(imagePath) {
+export async function setWallpaper(imagePath, { scale = 'span' } = {}) {
 	if (typeof imagePath !== 'string') {
 		throw new TypeError('Expected a string');
 	}
 
-	await execFile(binary, [path.resolve(imagePath)]);
+	const arguments_ = [
+		path.resolve(imagePath),
+		'--scale',
+		scale
+	]
+
+	await execFile(binary, arguments_);
 }
