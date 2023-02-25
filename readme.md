@@ -71,7 +71,7 @@ The screen to set the wallpaper on.
 
 Type: `string`\
 macOS Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`\
-Windows Values: `'center' | 'stretch' | 'tile' | 'span' | 'max' | 'crop-to-fit' | 'keep-aspect-ratio'`\
+Windows Values: `'center' | 'stretch' | 'tile' | 'span' | 'fit' | 'fill'`\
 Default macOS: `'auto'`\
 Default Windows: `'span'`
 

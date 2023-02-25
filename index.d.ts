@@ -37,7 +37,7 @@ export interface SetOptions {
 	@default 'auto' for macOS
 	@default 'span' for Windows
 	*/
-	readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center' | 'tile' | 'span' | 'max' | 'crop-to-fit' | 'keep-aspect-ratio';
+	readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center' | 'tile' | 'span';
 }
 
 /**
