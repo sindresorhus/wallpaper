@@ -67,11 +67,13 @@ The screen to set the wallpaper on.
 
 *On Linux and Windows it's hard-coded to `'main'`.*
 
-##### scale *(macOS only)*
+##### scale *(macOS & Windows)*
 
 Type: `string`\
-Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`\
-Default: `'auto'`
+macOS Values: `'auto' | 'fill' | 'fit' | 'stretch' | 'center'`\
+Windows Values: `'center' | 'stretch' | 'tile' | 'span' | 'fit' | 'fill'`\
+Default macOS: `'auto'`\
+Default Windows: `'span'`
 
 Scaling method.
 

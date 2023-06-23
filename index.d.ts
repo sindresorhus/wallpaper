@@ -26,13 +26,17 @@ export interface SetOptions {
 	readonly screen?: 'all' | 'main' | number;
 
 	/**
-	__macOS only.__
+	__macOS & Windows__
 
-	Scaling method. Values: `auto` `fill` `fit` `stretch` `center`.
+	Scaling method.
 
-	@default 'auto'
+	macOS Values: `auto` `fill` `fit` `stretch` `center`.
+	Windows Values: `stretch` `center` `tile` `span` `max` `crop-to-fit` `keep-aspect-ratio`.
+
+	@default 'auto' for macOS
+	@default 'span' for Windows
 	*/
-	readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center';
+	readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center' | 'tile' | 'span';
 }
 
 /**
