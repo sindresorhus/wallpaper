@@ -30,8 +30,7 @@ export interface SetOptions {
 
 	Scaling method.
 
-	MacOS Values: `auto` `fill` `fit` `stretch` `center`.
-
+	macOS Values: `auto` `fill` `fit` `stretch` `center`.
 	Windows Values: `stretch` `center` `tile` `span` `max` `crop-to-fit` `keep-aspect-ratio`.
 
 	@default 'auto' for macOS
