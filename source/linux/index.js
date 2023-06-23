@@ -29,7 +29,7 @@ export async function getWallpaper() {
 
 		const imagePath = await app.get();
 
-		if (typeof imagePath !== 'undefined') {
+		if (imagePath !== undefined) {
 			if (!wallpapersVoted.get(imagePath)) {
 				wallpapersVoted.set(imagePath, 0);
 			}

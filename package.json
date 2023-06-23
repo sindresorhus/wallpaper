@@ -12,7 +12,7 @@
 	"type": "module",
 	"exports": "./index.js",
 	"engines": {
-		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+		"node": ">=16"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -34,9 +34,9 @@
 		"photo"
 	],
 	"devDependencies": {
-		"ava": "^4.0.1",
-		"tsd": "^0.19.1",
-		"xo": "^0.47.0"
+		"ava": "^5.3.1",
+		"tsd": "^0.28.1",
+		"xo": "^0.54.2"
 	},
 	"ava": {
 		"serial": true

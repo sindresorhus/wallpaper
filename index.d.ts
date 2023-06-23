@@ -1,4 +1,4 @@
-export interface GetOptions {
+export type GetOptions = {
 	/**
 	__macOS only.__
 
@@ -9,9 +9,9 @@ export interface GetOptions {
 	@default 'main'
 	*/
 	readonly screen?: 'all' | 'main' | number;
-}
+};
 
-export interface SetOptions {
+export type SetOptions = {
 	/**
 	__macOS only.__
 
@@ -37,7 +37,7 @@ export interface SetOptions {
 	@default 'span' for Windows
 	*/
 	readonly scale?: 'auto' | 'fill' | 'fit' | 'stretch' | 'center' | 'tile' | 'span';
-}
+};
 
 /**
 Get the path to the wallpaper image currently set.
