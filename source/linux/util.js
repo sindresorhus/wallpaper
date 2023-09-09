@@ -4,25 +4,6 @@ import {promises as fsPromises} from 'node:fs';
 
 export const execFile = promisify(childProcess.execFile);
 export const exec = promisify(childProcess.exec);
-export const spawn = (
-	cmd,
-	args,
-) => new Promise(resolve => {
-	const cp = childProcess.spawn(cmd, args);
-	cp.on('spawn', () => {
-		resolve();
-	});
-
-	cp.on('exit', (code, signal) => {
-		if (code) {
-			console.log(`swaybg exited with ${code} code`);
-		}
-
-		if (signal) {
-			console.log(`swaybg exited with ${signal} signal`);
-		}
-	});
-});
 
 export async function commandExists(command) {
 	// `which` all commands and expect stdout to return a positive
