@@ -14,7 +14,7 @@ export async function set(imagePath) {
 		cp.stderr.on('data', data => {
 			if (data.includes('Failed to load image')) {
 				cp.kill('SIGINT');
-				reject();
+				reject(new Error(`Failed to load image from ${imagePath}`));
 			} else {
 				resolve();
 			}
