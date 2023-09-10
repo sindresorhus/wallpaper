@@ -13,16 +13,13 @@ export async function set(imagePath) {
 		const cp = childProcess.spawn(cmd, args);
 		cp.stderr.on('data', data => {
 			if (data.includes('Failed to load image')) {
-				reject(new Error(`Failed to load ${args[1]}`));
+				cp.kill('SIGINT');
+				reject();
 			} else {
 				resolve();
 			}
 		});
 	});
 
-	try {
-		await spawn('swaybg', ['--image', imagePath, '--mode', 'fill']);
-	} catch (error) {
-		console.error(error);
-	}
+	await spawn('swaybg', ['--image', imagePath, '--mode', 'fill']);
 }
