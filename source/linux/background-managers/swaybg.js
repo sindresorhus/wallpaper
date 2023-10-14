@@ -6,11 +6,9 @@ export async function isAvailable() {
 }
 
 export async function set(imagePath) {
-	const spawn = (
-		cmd,
-		args,
-	) => new Promise((resolve, reject) => {
-		const cp = childProcess.spawn(cmd, args);
+	return new Promise((resolve, reject) => {
+		const cp = childProcess.spawn('swaybg', ['--image', imagePath, '--mode', 'fill']);
+		
 		cp.stderr.on('data', data => {
 			if (data.includes('Failed to load image')) {
 				cp.kill('SIGINT');
@@ -20,6 +18,4 @@ export async function set(imagePath) {
 			}
 		});
 	});
-
-	await spawn('swaybg', ['--image', imagePath, '--mode', 'fill']);
 }
