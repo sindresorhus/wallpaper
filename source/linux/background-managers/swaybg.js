@@ -8,7 +8,7 @@ export async function isAvailable() {
 export async function set(imagePath) {
 	return new Promise((resolve, reject) => {
 		const cp = childProcess.spawn('swaybg', ['--image', imagePath, '--mode', 'fill']);
-		
+
 		cp.stderr.on('data', data => {
 			if (data.includes('Failed to load image')) {
 				cp.kill('SIGINT');
