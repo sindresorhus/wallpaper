@@ -8,13 +8,11 @@ async function initialize() {
 	try {
 		await execFile('swww', ['init']);
 	} catch (error) {
-		if (
-			error.stderr.includes('There seems to already be another instance running...')
-		) {
+		if (error.stderr.includes('There seems to already be another instance running')) {
 			return;
 		}
 
-		throw new Error(`Failed to set image: \n swww - ${error.stderr}`);
+		throw new Error(`Failed to set image for swww: ${error.stderr}`);
 	}
 }
 
