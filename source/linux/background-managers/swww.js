@@ -18,6 +18,12 @@ async function initialize() {
 	}
 }
 
+export async function get() {
+	await initialize();
+	const {stdout: query} = await execFile('swww', ['query']);
+	return query.slice(query.indexOf('/'), query.indexOf('\n'));
+}
+
 export async function set(imagePath) {
 	await initialize();
 	await execFile('swww', ['img', imagePath]);
