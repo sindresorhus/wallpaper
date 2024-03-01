@@ -47,6 +47,8 @@ If you set `'all'` then `getWallpaper()` will return a `Promise<string[]>`.
 
 Returns a `Promise`.
 
+On macOS, it sets the wallpaper on the active space. There is no way to set it on all spaces.
+
 #### imagePath
 
 Type: `string`
