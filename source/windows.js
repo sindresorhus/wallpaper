@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const execFile = promisify(childProcess.execFile);
 
-// Binary source → https://github.com/sindresorhus/win-wallpaper
+// Binary source → https://github.com/sindresorhus/windows-wallpaper
 const binary = path.join(__dirname, 'windows-wallpaper-x86-64.exe');
 
 export async function getWallpaper() {

@@ -136,5 +136,5 @@ On Windows, you can use [Wallpaper Engine](https://wallpaperengine.io). It's ava
 
 - [wallpaper-cli](https://github.com/sindresorhus/wallpaper-cli) - CLI for this module
 - [macos-wallpaper](https://github.com/sindresorhus/macos-wallpaper) - macOS binary used in this module
-- [win-wallpaper](https://github.com/sindresorhus/win-wallpaper) - Windows binary used in this module
+- [windows-wallpaper](https://github.com/sindresorhus/windows-wallpaper) - Windows binary used in this module
 - [trash](https://github.com/sindresorhus/trash) - Move files and directories to the trash
