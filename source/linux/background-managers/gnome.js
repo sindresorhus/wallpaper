@@ -8,9 +8,9 @@ async function isDarkStyle() {
 	const {stdout} = await execFile('gsettings', [
 		'get',
 		'org.gnome.desktop.interface',
-		'color-scheme'
+		'color-scheme',
 	]);
-	return hasLine(stdout, "'prefer-dark'") ? true : false;
+	return Boolean(hasLine(stdout, '\'prefer-dark\''));
 }
 
 export async function get() {
