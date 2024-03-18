@@ -10,6 +10,7 @@ async function isDarkStyle() {
 		'org.gnome.desktop.interface',
 		'color-scheme',
 	]);
+
 	return Boolean(hasLine(stdout, '\'prefer-dark\''));
 }
 
@@ -27,6 +28,7 @@ export async function get() {
 
 export async function set(imagePath) {
 	const keyForStyle = (await isDarkStyle()) ? 'picture-uri-dark' : 'picture-uri';
+
 	await execFile('gsettings', [
 		'set',
 		'org.gnome.desktop.background',
