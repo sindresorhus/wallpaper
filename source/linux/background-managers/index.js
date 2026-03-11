@@ -12,3 +12,4 @@ export * as setroot from './setroot.js';
 export * as xfconfquery from './xfconf-query.js';
 export * as swaybg from './swaybg.js';
 export * as swww from './swww.js';
+export * as awww from './awww.js';
