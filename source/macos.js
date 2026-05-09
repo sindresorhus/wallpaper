@@ -1,5 +1,8 @@
+import fs from 'node:fs/promises';
+import {randomUUID} from 'node:crypto';
 import {promisify} from 'node:util';
 import childProcess from 'node:child_process';
+import os from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -8,6 +11,35 @@ const execFile = promisify(childProcess.execFile);
 
 // Binary source → https://github.com/sindresorhus/macos-wallpaper
 const binary = path.join(__dirname, 'macos-wallpaper');
+
+async function shouldPrimeSamePathRefresh(imagePath, screen) {
+	const stats = await fs.stat(imagePath).catch(() => undefined);
+
+	if (!stats) {
+		return false;
+	}
+
+	if (!stats.isFile()) {
+		return false;
+	}
+
+	const currentWallpaper = await getWallpaper({screen});
+	const currentWallpapers = Array.isArray(currentWallpaper) ? currentWallpaper : [currentWallpaper];
+
+	return currentWallpapers.some(wallpaperPath => path.resolve(wallpaperPath) === imagePath);
+}
+
+async function withTemporaryWallpaperCopy(imagePath, run) {
+	const temporaryPath = path.join(os.tmpdir(), `wallpaper-${randomUUID()}-${path.basename(imagePath)}`);
+
+	await fs.copyFile(imagePath, temporaryPath);
+
+	try {
+		await run(temporaryPath);
+	} finally {
+		await fs.rm(temporaryPath, {force: true});
+	}
+}
 
 export async function getWallpaper({screen = 'main'} = {}) {
 	let {stdout} = await execFile(binary, ['get', '--screen', screen]);
@@ -25,14 +57,32 @@ export async function setWallpaper(imagePath, {screen = 'all', scale = 'auto'} =
 		throw new TypeError('Expected a string');
 	}
 
+	const resolvedImagePath = path.resolve(imagePath);
+
 	const arguments_ = [
 		'set',
-		path.resolve(imagePath),
+		resolvedImagePath,
 		'--screen',
 		screen,
 		'--scale',
 		scale,
 	];
+
+	if (await shouldPrimeSamePathRefresh(resolvedImagePath, screen)) {
+		await withTemporaryWallpaperCopy(resolvedImagePath, async temporaryPath => {
+			await execFile(binary, [
+				'set',
+				temporaryPath,
+				'--screen',
+				screen,
+				'--scale',
+				scale,
+			]);
+			await execFile(binary, arguments_);
+		});
+
+		return;
+	}
 
 	await execFile(binary, arguments_);
 }
