@@ -79,6 +79,8 @@ Default Windows: `'span'`
 
 Scaling method.
 
+*On Linux this option is ignored.*
+
 ### setSolidColorWallpaper(color, options?) *(macOS only)*
 
 Returns a `Promise`.
